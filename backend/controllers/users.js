@@ -12,7 +12,7 @@ const register = (req, res) => {
     password,
     role,
   });
-
+  console.log(user)
   user
     .save()
     .then((result) => {

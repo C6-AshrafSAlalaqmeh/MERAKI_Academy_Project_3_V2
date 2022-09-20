@@ -37,6 +37,8 @@ const [hideNavbar ,setHideNavbar]=useState(true)
 
      <Route path="/articles" element={<AddArticle token={token} setHideNavbar={setHideNavbar} setSuccessShow={setSuccessShow} setSuccess={setSuccess} successShow={successShow} success={success}/>}/>
 
+      <Route path="/articles/:id" element={<Dashboard />}/>
+        
       <Route path="*" element={<p>Not Found</p>} />
       </Routes>
     

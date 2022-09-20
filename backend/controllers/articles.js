@@ -3,11 +3,13 @@ const articlesModel = require("../models/articles");
 // This function returns the articles
 const getAllArticles = (req, res) => {
   const userId = req.token.userId;
+  console.log("articles")
   articlesModel
     .find({})
     .populate("comments")
     .exec()
     .then((articles) => {
+      console.log("articles", articles)
       if (articles.length) {
         res.status(200).json({
           success: true,
@@ -148,6 +150,7 @@ const updateArticleById = (req, res) => {
 // This function deletes a specific article by its id
 const deleteArticleById = (req, res) => {
   const _id = req.params.id;
+  console.log(_id)
   articlesModel
     .findByIdAndDelete(_id)
     .then((result) => {
@@ -163,6 +166,7 @@ const deleteArticleById = (req, res) => {
       });
     })
     .catch((err) => {
+      console.log(err)
       res.status(500).json({
         success: false,
         message: `Server Error`,

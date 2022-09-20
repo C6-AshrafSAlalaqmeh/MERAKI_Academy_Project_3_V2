@@ -22,17 +22,17 @@ const login =()=>{
     })
     .then((result)=>{
         console.log(result)
-        setToken(result.data.token)
+      setToken(result.data.token)
         console.log(result.data.token)
         
       
       
       
         setisLoggedIn(true)
-       navigate('/dashboard')
        setSuccess(result.data.message)
        setHideNavbar(false)
        setSuccessShow(true)
+       navigate('/dashboard')
     })
     .catch((err)=>{
         setSuccess(err.response.data.message)

@@ -8,14 +8,14 @@
     grid-template-columns: repeat(1 ,360px);
     
     justify-content: left;
-    border: 1px solid;
-    width: 650px;
+    border: 0px solid;
+    width: 870px;
     /* margin-left: 450px; */
    
     height: 200px;
      /* padding:20px;   */
     margin-top: 30px;
-    margin-left: 380px;
+    margin-left: 260px;
     
 }
 .titileDesc{
@@ -34,14 +34,37 @@
 .buttonAndInputDash{
     display: flex;
     width: 640px;
-    gap: 121px;
+    gap: 220px;
     margin-left: 10px ;
 }
 .inputIndiv{
-width: 280px;
+width: 290px;
 height: 20px;
 }
 .allbutton{
     display: flex;
     gap: 5px;
+    margin-bottom: 10px;
+    height: 40px;
+}
+.add{
+    border-radius: 7px;
+    border: 0px;
+    background-color: rgb(7, 7, 102);
+    color: white;
+    width: 130px;
+}
+.update{
+    border-radius: 7px;
+    border: 0px;
+    background-color: rgb(71, 71, 243);
+    color: white;
+    width: 90px;
+}
+.delete{
+    border-radius: 7px;
+    border: 0px;
+    background-color: rgb(252, 1, 1);
+    color: white;
+    width: 90px;
 }

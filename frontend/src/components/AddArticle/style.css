@@ -36,3 +36,7 @@
     background-color:rgb(67, 235, 26);
     
 }
+.butt:hover{
+    background-color:rgb(158, 157, 231);
+    transition:  background-color .8s;
+}

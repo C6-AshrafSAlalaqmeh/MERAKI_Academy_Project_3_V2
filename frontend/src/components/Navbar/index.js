@@ -1,10 +1,18 @@
+import { Link } from "react-router-dom"
+
 const Navbar = ()=>{
+
+
+//     const reg=()=>{
+//    <Link to='/users'></Link>
+
+//     }
 
     return(
         <>
-        
-        <p>Register</p>
-        <p> Login</p>
+         <Link to='/users'>Register</Link>
+       
+         <Link to='/login'>Login</Link>
         
         
         
@@ -21,3 +29,5 @@ const Navbar = ()=>{
     )
 
 }
+
+export default Navbar

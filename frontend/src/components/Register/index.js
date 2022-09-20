@@ -1,17 +1,21 @@
 import React, { useState } from "react"
 import axios from 'axios'
-const Register =()=>{
-const [firstName , setFirstName] =useState("")
+
+
+
+const Register =({success,setSuccess,setSuccessShow ,successShow})=>{
+
+
+   const [firstName , setFirstName] =useState("")
 const [lastName , setLastName] =useState("")
 const [age , setAge] =useState("")
 const [country , setCountry] =useState("")
 const [email , setEmail] =useState("")
-
 const [password , setPassword] =useState("")
-const [success , setSuccess] = useState('')
-const [successShow , setSuccessShow]= useState(true)
 
-const Register =()=>{
+
+
+const buttonRegister =()=>{
    axios.post('http://localhost:5000/users',{
     firstName ,
     lastName ,
@@ -23,7 +27,7 @@ const Register =()=>{
    })
    .then((result)=>{
  console.log(result.data.message)
-setSuccess(result.data.message)
+ setSuccess(result.data.message)
 
    })
    .catch((err)=>{
@@ -48,8 +52,9 @@ return(
        <input type='email' placeholder="Email" onChange={(e)=>{setEmail(e.target.value)}}/> 
        <input type='password' placeholder="Password" onChange={(e)=>{setPassword(e.target.value)}}/>
       
-    <button onClick={Register}>Register</button>
-    { successShow && success }
+    <button onClick={buttonRegister}>Register</button>
+     
+     {successShow && success }
    
    </>
 

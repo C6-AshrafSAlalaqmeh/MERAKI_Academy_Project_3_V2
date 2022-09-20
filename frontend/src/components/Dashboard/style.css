@@ -2,6 +2,12 @@
     justify-content: center;
 }
 
+.comment{
+    height: 100px;
+    width: 860px;
+    overflow: scroll;
+}
+
 .contanrDash{
     background-color: rgba(102, 114, 219, 0.3);
     display: grid;
@@ -12,7 +18,7 @@
     width: 870px;
     /* margin-left: 450px; */
    
-    height: 250px;
+    height: 350px;
      /* padding:20px;   */
     margin-top: 30px;
     margin-left: 260px;

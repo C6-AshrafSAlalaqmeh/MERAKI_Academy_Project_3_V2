@@ -9,7 +9,7 @@ const Dashboard = ({ token }) => {
  const[newTitle ,setNewTitle]=useState('')
  const[newDescription ,setNewDescription]=useState('')
 const[showInput , setShowInput]= useState(false)
-
+ const[commit , setCommit]=useState('')
 
 const getAllArticles =()=>{
 
@@ -77,6 +77,28 @@ const updateItem =(id)=>{
 }
 
 
+const addCommit =(id)=>{
+    console.log(id)
+    axios.post(`http://localhost:5000/articles/${id}/comments/`,{
+        comment : commit,
+     }, {
+        headers : {
+            authorization : `Bearer ${token}`
+        }
+     })
+     .then((result)=>{
+        console.log(result)
+      getAllArticles()
+     })
+     .catch((err)=>{
+ console.log(err)
+     })
+
+}
+
+
+
+
   return (
     <>
       {article.length && article.map((elem,idx) => {
@@ -86,15 +108,22 @@ const updateItem =(id)=>{
               <div className="titileDesc">
                 <p className="titleDash">{elem.title}</p>
                 <p className="descDash">{elem.description}</p>
+                <div className="comment">
+{ elem.comments.length && elem.comments.map((item)=>{
+  return  <p>{item.comment}</p> 
+}) 
+
+}
+                </div>
               </div>
           { showInput &&  <> <input placeholder="Title" onChange={(e)=>{setNewTitle(e.target.value)}}/>
               <input placeholder="description" onChange={(e)=>{setNewDescription(e.target.value)}}/>   </>}
               <div className="buttonAndInputDash">
                 <div className="inputIndash">
-                  <input className="inputIndiv" placeholder="Comment..." />
+                  <input className="inputIndiv"  onChange={(e)=>{ setCommit(e.target.value)}}     placeholder="Comment..." />
                 </div>
                 <div className="allbutton">
-                  <button className="add"> Adding Comment</button>
+                  <button className="add" onClick={()=>addCommit(elem._id)}> Add Comment</button>
                   <button className="update" onClick={() =>updateItem(elem._id)}>update</button>
                   <button className="delete" onClick={() =>deleteItem(elem._id)}>
                     Delete

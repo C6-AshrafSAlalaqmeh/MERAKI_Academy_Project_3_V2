@@ -6,6 +6,9 @@ import { useParams } from "react-router-dom";
 const Dashboard = ({ token }) => {
   const params = useParams();
   const [article, setArticle] = useState([]);
+ const[newTitle ,setNewTitle]=useState('')
+ const[newDescription ,setNewDescription]=useState('')
+const[showInput , setShowInput]= useState(false)
 
 
 const getAllArticles =()=>{
@@ -37,7 +40,7 @@ const getAllArticles =()=>{
   const deleteItem = (id) => {
     console.log(id);
     axios
-      .delete(`http://localhost:5000/articles/${id}`)
+      .delete(`http://localhost:5000/articles/${id}`,)
       .then((result) => {
         console.log(result);
         getAllArticles()
@@ -47,6 +50,32 @@ const getAllArticles =()=>{
         console.log(err);
       });
   };
+
+
+
+const updateItem =(id)=>{
+    setShowInput(true)
+    if(showInput){
+    axios
+    .put(`http://localhost:5000/articles/${id}`,{
+        title : newTitle,
+        description : newDescription,    
+    
+    })
+    .then((result) => {
+      console.log(result);
+      getAllArticles()
+      
+
+    
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+    }
+}
+
 
   return (
     <>
@@ -58,13 +87,15 @@ const getAllArticles =()=>{
                 <p className="titleDash">{elem.title}</p>
                 <p className="descDash">{elem.description}</p>
               </div>
+          { showInput &&  <> <input placeholder="Title" onChange={(e)=>{setNewTitle(e.target.value)}}/>
+              <input placeholder="description" onChange={(e)=>{setNewDescription(e.target.value)}}/>   </>}
               <div className="buttonAndInputDash">
                 <div className="inputIndash">
                   <input className="inputIndiv" placeholder="Comment..." />
                 </div>
                 <div className="allbutton">
                   <button className="add"> Adding Comment</button>
-                  <button className="update">update</button>
+                  <button className="update" onClick={() =>updateItem(elem._id)}>update</button>
                   <button className="delete" onClick={() =>deleteItem(elem._id)}>
                     Delete
                   </button>

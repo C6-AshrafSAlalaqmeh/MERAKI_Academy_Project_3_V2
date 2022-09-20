@@ -1,3 +1,4 @@
+import './style.css';
 import React, { useState } from "react"
 import axios from 'axios'
 
@@ -43,8 +44,8 @@ const buttonRegister =()=>{
 
 
 return(
-   <>
-   <h1> Hello </h1>
+   <div className="contanirRegister">
+  
        <input type='text' placeholder="First Name" onChange={(e)=>{setFirstName(e.target.value)}}/> 
        <input type='text' placeholder="Last  Name" onChange={(e)=>{setLastName(e.target.value)}}/> 
        <input type={Number} placeholder="Age" onChange={(e)=>{setAge(e.target.value)}}/> 
@@ -56,7 +57,7 @@ return(
      
      {successShow && success }
    
-   </>
+   </div>
 
     )
 }

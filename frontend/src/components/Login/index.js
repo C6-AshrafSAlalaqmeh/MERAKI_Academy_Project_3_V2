@@ -22,6 +22,8 @@ const login =()=>{
     .then((result)=>{
         console.log(result)
         setToken(result.data.token)
+        console.log(result.data.token)
+        console.log(token)
         setisLoggedIn(true)
        navigate('/dashboard')
        setSuccess(result.data.message)

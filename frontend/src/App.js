@@ -5,6 +5,7 @@ import Login from "./components/Login";
 import { useState } from "react";
 import Dashboard from "./components/Dashboard";
 import Navbar from "./components/Navbar";
+import AddArticle from "./components/AddArticle";
 
 const App = () => {
   const [token , setToken]=useState('')
@@ -17,10 +18,10 @@ const [hideNavbar ,setHideNavbar]=useState(true)
 
   return (
     <div className="App">
-     <h1>Welcome To APP</h1>
+     {/* <h1>Welcome To APP</h1> */}
       
 
-     {hideNavbar && <Navbar/>}
+     {<Navbar hideNavbar={hideNavbar}/>}
       <Routes>
       <Route path=""/>
       
@@ -32,8 +33,9 @@ const [hideNavbar ,setHideNavbar]=useState(true)
       {<Login setToken={setToken} token={token} setisLoggedIn={setisLoggedIn}  setSuccess={setSuccess} success={success}successShow={successShow} setHideNavbar={setHideNavbar}/>}/>
       
       
-      <Route path="/dashboard" element={<Dashboard/>}/>
+      <Route path="/dashboard" element={<Dashboard token={token}/>}/>
 
+     <Route path="/articles" element={<AddArticle token={token} setHideNavbar={setHideNavbar}/>}/>
 
       <Route path="*" element={<p>Not Found</p>} />
       </Routes>

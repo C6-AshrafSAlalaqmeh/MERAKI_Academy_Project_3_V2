@@ -1,0 +1,47 @@
+.bodydash{
+    justify-content: center;
+}
+
+.contanrDash{
+    background-color: rgba(102, 114, 219, 0.3);
+    display: grid;
+    grid-template-columns: repeat(1 ,360px);
+    
+    justify-content: left;
+    border: 1px solid;
+    width: 650px;
+    /* margin-left: 450px; */
+   
+    height: 200px;
+     /* padding:20px;   */
+    margin-top: 30px;
+    margin-left: 380px;
+    
+}
+.titileDesc{
+    display: grid;
+    font-size: 30px;
+  width: 600px;
+  justify-items: left;
+  margin-bottom: 0px;
+  margin-left: 10px ;
+  
+  
+}
+ .titleDash{
+    margin-bottom: 0px;
+}
+.buttonAndInputDash{
+    display: flex;
+    width: 640px;
+    gap: 121px;
+    margin-left: 10px ;
+}
+.inputIndiv{
+width: 280px;
+height: 20px;
+}
+.allbutton{
+    display: flex;
+    gap: 5px;
+}

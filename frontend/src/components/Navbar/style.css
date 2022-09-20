@@ -1,6 +1,21 @@
 .RegAndLogin{
     display: flex;
     gap: 90px;
-    /* background-color: blue; */
+   justify-content: center;
     margin: 50px;
+    margin-right: 90px;
+    font-size: 30px;
+    text-decoration: none;
+   
+}
+
+.dashAndArt{
+    display: flex;
+    gap: 90px;
+   justify-content: center;
+    margin: 50px;
+    margin-right: 90px;
+    font-size: 30px;
+    text-decoration: none;
+   
 }

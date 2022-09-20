@@ -1,10 +1,11 @@
+import "./style.css"
 import React, { useState } from "react"
 import axios from 'axios'
 import { useNavigate } from "react-router-dom"
-import Dashboard from "../Dashboard"
 
 
-const Login =({ setToken,token ,setisLoggedIn,success,setSuccess,successShow,setHideNavbar})=>{
+
+const Login =({setSuccessShow, setToken,token ,setisLoggedIn,success,setSuccess,successShow,setHideNavbar})=>{
 const [email , setEmail]=useState('')
 const [password , setPassword]=useState('')
 
@@ -23,27 +24,39 @@ const login =()=>{
         console.log(result)
         setToken(result.data.token)
         console.log(result.data.token)
-        console.log(token)
+        
+      
+      
+      
         setisLoggedIn(true)
        navigate('/dashboard')
        setSuccess(result.data.message)
        setHideNavbar(false)
+       setSuccessShow(true)
     })
     .catch((err)=>{
         setSuccess(err.response.data.message)
+        setSuccessShow(true)
     })
 }
 
 
 
 return(
-<>
-
+<div className="contanir">
+<h1>Login :</h1>
+<div className="inputlogin">
 <input type='email' placeholder="Email" onChange={(e)=>{setEmail(e.target.value)}}/>
 <input type='password' placeholder="Password" onChange={(e)=>{setPassword(e.target.value)}}/>
-<button onClick={login}> Login</button>
+</div>
+<div className="button">
+<button className="inbutton" onClick={login}> Login</button>
+</div>
 
-{ successShow && success }
+{ successShow && <div className='result'>
+     {successShow && success }
+     </div>
+       }
    
 
 
@@ -62,7 +75,7 @@ return(
 
 
 
-</>
+</div>
 )
 
 

@@ -1,0 +1,39 @@
+.contanir{
+    display: grid;
+    grid-template-columns: repeat(1 ,360px);
+    justify-content: center;
+    justify-items: left;
+    border: 1px solid;
+    width: 450px;
+    margin-left: 450px;
+    align-items: end;
+    height: 260px;
+    padding-bottom: 50px;
+    border-radius: 7px;
+}
+.inputlogin{
+    display:grid ;
+    gap: 20px;
+    width: 350px; 
+    height: 90px ;
+}
+.button{
+    width: 350px;
+    height: 40px;
+    border-radius: 5px;
+    border: 0px;
+    font-size: 30px;
+    background-color:rgb(67, 235, 26);
+}
+.result{
+    justify-self: center;
+    margin-top: 15px;
+    width: 370px;
+    height: 50px;
+    border: 1px solid;
+    padding-top: 10px;
+    font-size: 30px;
+    border-radius: 8px;
+    background-color: rgb(180, 240, 180) ;
+
+}

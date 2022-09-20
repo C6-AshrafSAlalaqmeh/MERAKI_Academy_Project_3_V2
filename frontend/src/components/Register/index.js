@@ -29,6 +29,7 @@ const buttonRegister =()=>{
    .then((result)=>{
  console.log(result.data.message)
  setSuccess(result.data.message)
+ setSuccessShow(true)
 
    })
    .catch((err)=>{
@@ -44,21 +45,26 @@ const buttonRegister =()=>{
 
 
 return(
+   <div className='body'>
    <div className="contanirRegister">
-  
+  <h1>Register : </h1>
+     <div className='input'>
        <input type='text' placeholder="First Name" onChange={(e)=>{setFirstName(e.target.value)}}/> 
        <input type='text' placeholder="Last  Name" onChange={(e)=>{setLastName(e.target.value)}}/> 
        <input type={Number} placeholder="Age" onChange={(e)=>{setAge(e.target.value)}}/> 
        <input type='text' placeholder="Country" onChange={(e)=>{setCountry(e.target.value)}}/> 
        <input type='email' placeholder="Email" onChange={(e)=>{setEmail(e.target.value)}}/> 
        <input type='password' placeholder="Password" onChange={(e)=>{setPassword(e.target.value)}}/>
-      
-    <button onClick={buttonRegister}>Register</button>
-     
+       </div>
+      <div className='button'>
+    <button className='inbutton' onClick={buttonRegister}>Register</button>
+    </div>
+   { successShow && <div className='result'>
      {successShow && success }
-   
+     </div>
+       }
    </div>
-
+   </div>
     )
 }
 

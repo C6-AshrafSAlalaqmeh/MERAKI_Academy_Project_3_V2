@@ -14,10 +14,10 @@ const Navbar = ({hideNavbar})=>{
          <Link to='/login'>Login</Link>
          </div>
          :
-         <>
+         <div className="dashAndArt">
          <Link to='/dashboard'>Dashboard</Link>
          <Link to='/articles'>Create New Article</Link>
-          </>
+          </div>
              
           }
          

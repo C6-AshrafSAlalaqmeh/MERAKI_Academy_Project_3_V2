@@ -11,7 +11,7 @@ const App = () => {
   const [token , setToken]=useState('')
   const [isLoggedIn  , setisLoggedIn ]=useState(false)
   const [success , setSuccess] = useState('')
-const [successShow ,setSuccessShow]=useState(true)
+const [successShow ,setSuccessShow]=useState(false)
 
 const [hideNavbar ,setHideNavbar]=useState(true)
 
@@ -30,12 +30,12 @@ const [hideNavbar ,setHideNavbar]=useState(true)
       
       
       <Route path="/login" element=
-      {<Login setToken={setToken} token={token} setisLoggedIn={setisLoggedIn}  setSuccess={setSuccess} success={success}successShow={successShow} setHideNavbar={setHideNavbar}/>}/>
+      {<Login setToken={setToken} token={token} setisLoggedIn={setisLoggedIn}  setSuccess={setSuccess} success={success}successShow={successShow} setHideNavbar={setHideNavbar} setSuccessShow={setSuccessShow}/>}/>
       
       
       <Route path="/dashboard" element={<Dashboard token={token}/>}/>
 
-     <Route path="/articles" element={<AddArticle token={token} setHideNavbar={setHideNavbar}/>}/>
+     <Route path="/articles" element={<AddArticle token={token} setHideNavbar={setHideNavbar} setSuccessShow={setSuccessShow} setSuccess={setSuccess} successShow={successShow} success={success}/>}/>
 
       <Route path="*" element={<p>Not Found</p>} />
       </Routes>

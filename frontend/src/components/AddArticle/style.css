@@ -1,0 +1,38 @@
+.contar{
+    display: grid;
+    grid-template-columns: repeat(1 ,360px);
+    justify-content: center;
+    justify-items: left;
+    border: 1px solid;
+    width: 450px;
+    margin-left: 450px;
+    align-items: end;
+    height: 350px;
+    padding-bottom: 50px;
+    border-radius: 7px;
+}
+.inputAddArt{
+    display:grid ;
+    gap: 20px;
+    width: 350px; 
+    height: 90px ;
+}
+.inputTitile{
+    height: 30px;
+}
+.textarea{
+    height: 90px;
+}
+.buttonArt{
+    margin-top: 80px;
+    justify-self: center;
+}
+.butt{
+    width: 350px;
+    height: 40px;
+    border-radius: 5px;
+    border: 0px;
+    font-size: 30px;
+    background-color:rgb(67, 235, 26);
+    
+}

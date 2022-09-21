@@ -1,9 +1,15 @@
-import { Link } from "react-router-dom"
+import { Link ,useNavigate } from "react-router-dom"
 import "./style.css"
 
-const Navbar = ({hideNavbar})=>{
+const Navbar = ({hideNavbar ,setisLoggedIn})=>{
+    const navigate= useNavigate();
 
-
+const logout = ()=>{
+    localStorage.clear();
+    setisLoggedIn(false)
+    navigate('/login')
+    
+}
 
 
     return(
@@ -11,13 +17,13 @@ const Navbar = ({hideNavbar})=>{
          { hideNavbar ?
          <div className="RegAndLogin">
          <Link className="reg" to='/users'>Register</Link>
-         <Link to='/login'>Login</Link>
+         <Link className="log" to='/login'>Login</Link>
          </div>
          :
          <div className="dashAndArt">
-         <Link to='/dashboard'>Dashboard</Link>
-         <Link to='/articles'>Create New Article</Link>
-         <Link to='/articles'>Logout</Link>
+         <Link className="dash"  to='/dashboard'>Dashboard</Link>
+         <Link className="art"  to='/articles'>Create New Article</Link>
+          <button onClick={()=> logout()} className="logout">Logout</button> 
           </div>
              
           }

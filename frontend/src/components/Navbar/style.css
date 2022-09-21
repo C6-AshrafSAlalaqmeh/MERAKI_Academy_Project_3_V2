@@ -5,7 +5,8 @@
     margin: 50px;
     margin-right: 90px;
     font-size: 30px;
-    text-decoration: none;
+   
+    
    
 }
 
@@ -21,5 +22,53 @@
 }
 
 .reg{
-    
+    text-decoration: none ;
+    transform:scale(1.08 ); 
+    transition: transform .5s ;
+}
+
+.reg:hover{
+    transform:scale(1.08 ); 
+    transition: transform .5s ;
+
+}
+.log{
+    text-decoration: none ;
+}
+
+.log:hover{
+    transform:scale(1.08 ); 
+    transition: transform .5s ;
+
+}
+
+.dash{
+    text-decoration: none ;
+   
+}
+
+.dash:hover{
+    transform:scale(1.08 ); 
+    transition: transform .5s ;
+
+}
+
+
+.art{
+    text-decoration: none ;
+   
+}
+.art:hover{
+    transform:scale(1.08 ); 
+    transition: transform .5s ;
+
+}
+.logout{
+    text-decoration: none ;
+   
+}
+.logout:hover{
+    transform:scale(1.08 ); 
+    transition: transform .5s ;
+
 }

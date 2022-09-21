@@ -21,7 +21,7 @@ const [hideNavbar ,setHideNavbar]=useState(true)
      {/* <h1>Welcome To APP</h1> */}
       
 
-     {<Navbar hideNavbar={hideNavbar}/>}
+     {<Navbar hideNavbar={hideNavbar} setisLoggedIn={setisLoggedIn}/>}
       <Routes>
       <Route path=""/>
       

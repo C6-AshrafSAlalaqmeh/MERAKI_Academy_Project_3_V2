@@ -21,9 +21,10 @@ const login =()=>{
 
     })
     .then((result)=>{
-        console.log(result)
-      setToken(result.data.token)
         console.log(result.data.token)
+      setToken(result.data.token)
+      localStorage.setItem('token', result.data.token);
+       
         
       
       

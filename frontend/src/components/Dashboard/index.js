@@ -2,6 +2,7 @@ import "./style.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+// import users from "../../../../backend/models/users";
 
 const Dashboard = ({ token }) => {
   const params = useParams();
@@ -18,7 +19,7 @@ const getAllArticles =()=>{
         axios
           .get("http://localhost:5000/articles", {
             headers: {
-                authorization : `Bearer ${token}`
+                authorization : 'Bearer ' + localStorage.getItem('token')
             }
           })
           .then((result) => {
@@ -103,6 +104,7 @@ const addCommit =(id)=>{
     <>
       {article.length && article.map((elem,idx) => {
         return (
+           
           <div className="bodydash" key={idx} >
             <div className="contanrDash">
               <div className="titileDesc">
@@ -124,11 +126,14 @@ const addCommit =(id)=>{
                 </div>
                 <div className="allbutton">
                   <button className="add" onClick={()=>addCommit(elem._id)}> Add Comment</button>
+                  
+               {/* { elem.author === users.id && <> */}
                   <button className="update" onClick={() =>updateItem(elem._id)}>update</button>
                   <button className="delete" onClick={() =>deleteItem(elem._id)}>
                     Delete
                   </button>
-                </div>
+                  
+               </div>
               </div>
             </div>
           </div>

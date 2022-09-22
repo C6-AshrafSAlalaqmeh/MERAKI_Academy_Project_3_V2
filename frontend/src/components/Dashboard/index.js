@@ -58,7 +58,6 @@ const Dashboard = ({ token }) => {
           description: newDescription,
         })
         .then((result) => {
-          console.log(result);
           getAllArticles();
         })
         .catch((err) => {
@@ -108,8 +107,8 @@ const Dashboard = ({ token }) => {
                   </div>
                 </div>
                 {showInput && (
-                  <>
-                    {" "}
+                  <div className="new">
+                    
                     <input
                       placeholder="Title"
                       onChange={(e) => {
@@ -121,8 +120,8 @@ const Dashboard = ({ token }) => {
                       onChange={(e) => {
                         setNewDescription(e.target.value);
                       }}
-                    />{" "}
-                  </>
+                    />
+                  </div>
                 )}
                 <div className="buttonAndInputDash">
                   <div className="inputIndash">

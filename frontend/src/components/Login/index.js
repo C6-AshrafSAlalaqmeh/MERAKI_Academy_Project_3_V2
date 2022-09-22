@@ -55,7 +55,7 @@ return(
 </div>
 
 { successShow && <div className='result'>
-     {successShow && success }
+     {success }
      </div>
        }
    

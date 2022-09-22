@@ -7,7 +7,7 @@
     width: 450px;
     margin-left: 450px;
     align-items: end;
-    height: 260px;
+    height: 280px;
     padding-bottom: 50px;
     border-radius: 7px;
 }
@@ -28,8 +28,8 @@
 .result{
     justify-self: center;
     margin-top: 15px;
-    width: 370px;
-    height: 50px;
+    width: 400px;
+    height: 70px;
     border: 1px solid;
     padding-top: 10px;
     font-size: 30px;

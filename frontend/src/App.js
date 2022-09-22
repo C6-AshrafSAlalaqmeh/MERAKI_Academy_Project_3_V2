@@ -18,12 +18,12 @@ const [hideNavbar ,setHideNavbar]=useState(true)
 
   return (
     <div className="App">
-     {/* <h1>Welcome To APP</h1> */}
+    
       
 
      {<Navbar hideNavbar={hideNavbar} setisLoggedIn={setisLoggedIn} setToken={setToken}/>}
       <Routes>
-      <Route path=""/>
+      <Route path="/" element={<Login/>} />
       
       <Route path="/users" element=
       {<Register setSuccess={setSuccess} success={success} setSuccessShow={setSuccessShow} successShow={successShow} />}/>

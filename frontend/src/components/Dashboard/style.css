@@ -3,7 +3,7 @@
 }
 
 .comment{
-    height: 100px;
+    height: 150px;
     width: 860px;
     overflow: scroll;
     cursor: n-resize;
@@ -17,10 +17,9 @@
     justify-content: left;
     border: 0px solid;
     width: 870px;
-    /* margin-left: 450px; */
    
-    height: 350px;
-     /* padding:20px;   */
+    height: 390px;
+    
     margin-top: 30px;
     margin-left: 260px;
     
@@ -47,6 +46,12 @@
 .inputIndiv{
 width: 290px;
 height: 20px;
+
+}
+
+.new{
+    display: grid;
+    gap: 5px;
 
 }
 .allbutton{

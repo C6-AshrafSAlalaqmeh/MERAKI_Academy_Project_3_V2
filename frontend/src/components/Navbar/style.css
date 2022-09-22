@@ -22,9 +22,8 @@
 }
 
 .reg{
-    text-decoration: none ;
-    transform:scale(1.08 ); 
-    transition: transform .5s ;
+    text-decoration: none ; 
+    color:rgb(7, 7, 102) ;
 }
 
 .reg:hover{
@@ -34,6 +33,8 @@
 }
 .log{
     text-decoration: none ;
+    
+    color: rgb(7, 7, 102);
 }
 
 .log:hover{
@@ -44,6 +45,7 @@
 
 .dash{
     text-decoration: none ;
+    color: rgb(7, 7, 102);
    
 }
 
@@ -56,6 +58,7 @@
 
 .art{
     text-decoration: none ;
+    color: rgb(7, 7, 102);
    
 }
 .art:hover{
@@ -64,7 +67,11 @@
 
 }
 .logout{
-    text-decoration: none ;
+    background-color: white;
+    border: 0px;
+    font-size: 30px;
+    color: rgb(7, 7, 102);
+    font-family: "Times New Roman", Times, serif;
    
 }
 .logout:hover{

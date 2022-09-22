@@ -68,7 +68,7 @@ const Dashboard = ({ token }) => {
   };
 
   const addCommit = (id) => {
-    console.log(id);
+    
     axios
       .post(
         `http://localhost:5000/articles/${id}/comments/`,

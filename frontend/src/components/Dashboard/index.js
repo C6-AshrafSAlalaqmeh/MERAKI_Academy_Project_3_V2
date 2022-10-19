@@ -41,7 +41,6 @@ const Dashboard = ({ token }) => {
     axios
       .delete(`http://localhost:5000/articles/${id}`)
       .then((result) => {
-        console.log(result);
         getAllArticles();
       })
       .catch((err) => {
@@ -76,12 +75,12 @@ const Dashboard = ({ token }) => {
         },
         {
           headers: {
-            authorization: `Bearer ${token}`,
+            authorization: 'Bearer ' + localStorage.getItem('token'),
           },
         }
       )
       .then((result) => {
-        console.log(result);
+        //function مقارنة الادي عشان يضيف الكومنت
         getAllArticles();
       })
       .catch((err) => {

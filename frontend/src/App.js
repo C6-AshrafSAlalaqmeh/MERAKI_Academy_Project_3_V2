@@ -23,7 +23,7 @@ const [hideNavbar ,setHideNavbar]=useState(true)
 
      {<Navbar hideNavbar={hideNavbar} setisLoggedIn={setisLoggedIn} setToken={setToken}/>}
       <Routes>
-      <Route path="/" element={<Login/>} />
+      
       
       <Route path="/users" element=
       {<Register setSuccess={setSuccess} success={success} setSuccessShow={setSuccessShow} successShow={successShow} />}/>
